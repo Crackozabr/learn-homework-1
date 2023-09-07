@@ -79,9 +79,10 @@ def talk_to_me(update, context):
 
 def define_constellation(update, context):
     planet = update.message.text.split()[1]
-    u = eval(f"ephem.{planet}()")
-    u.compute(datetime.today().strftime('%Y/%m/%d'))
-    text = f'Планета {planet} сегодня в созвездии {ephem.constellation(u)[1]}'
+    class_name = getattr(ephem, planet)
+    class_call = class_name()
+    class_call.compute(datetime.today().strftime('%Y/%m/%d'))
+    text = f'Планета {planet} сегодня в созвездии {ephem.constellation(class_call)[1]}'
     print(text)
     update.message.reply_text(text)
 
