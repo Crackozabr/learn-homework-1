@@ -25,7 +25,6 @@ def main(one, two):
          return 2
       elif two == 'learn':
          return 3
-      else: pass
     else: return 0
     
 if __name__ == "__main__":
