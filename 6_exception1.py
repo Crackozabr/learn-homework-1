@@ -16,7 +16,6 @@ def hello_user():
           answer = input('Как дела? ')
           if answer == 'Хорошо':
             break
-          else: pass
     except KeyboardInterrupt:
       print("\nПока!")
     

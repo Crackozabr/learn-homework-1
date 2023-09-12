@@ -15,7 +15,6 @@ def hello_user():
         answer = input('Как дела? ')
         if answer == 'Хорошо':
           break
-        else: pass
    
 if __name__ == "__main__":
     hello_user()
